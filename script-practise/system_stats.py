@@ -1,3 +1,6 @@
 import os
+import datetime
+print(datetime.datetime.today())
 
-print(os.system('systeminfo'))
+window = f"This is window system info: {os.system('systeminfo')}"
+print(window)
