@@ -1,0 +1,28 @@
+this is the error logs file
+[2026-03-03T04:13:09.207] [ERROR] [17199] [PANEL] [BDA3DA32C6764DF0BC2C8A6446DE7A8B] -  - Error: Communication Issue
+    at exports.NsSocket.<anonymous> (/root/integration-master-panel/support/util/sftp.js:28:52)
+    at exports.NsSocket.listener (/root/integration-master-panel/node_modules/eventemitter2/lib/eventemitter2.js:251:10)
+    at EventEmitter.emit (/root/integration-master-panel/node_modules/eventemitter2/lib/eventemitter2.js:339:22)
+    at exports.NsSocket._onData (/root/integration-master-panel/node_modules/nssocket/lib/nssocket.js:454:8)
+    at Lazy.<anonymous> (/root/integration-master-panel/node_modules/lazy/lazy.js:91:13)
+    at Lazy.<anonymous> (/root/integration-master-panel/node_modules/lazy/lazy.js:73:19)
+    at Lazy.emit (node:events:513:28)
+    at Lazy.emit (node:domain:489:12)
+    at Lazy.<anonymous> (/root/integration-master-panel/node_modules/lazy/lazy.js:74:22)
+    at Lazy.emit (node:events:513:28)
+    at Lazy.emit (node:domain:489:12)
+    at yieldTo (/root/integration-master-panel/node_modules/lazy/lazy.js:181:18)
+    at Function.<anonymous> (/root/integration-master-panel/node_modules/lazy/lazy.js:219:27)
+    at Lazy.<anonymous> (/root/integration-master-panel/node_modules/lazy/lazy.js:187:21)
+    at Lazy.emit (node:events:513:28)
+    at Lazy.emit (node:domain:489:12)
+Error: Callback was already called.
+    at /root/integration-master-panel/node_modules/async/dist/async.js:325:36
+    at /root/integration-master-panel/node_modules/async/dist/async.js:3680:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+WARNING: NODE_CONFIG_ENV value of 'panel' did not match any deployment config file names.
+WARNING: See https://github.com/node-config/node-config/wiki/Strict-Mode
+WARNING: NODE_APP_INSTANCE value of '0' did not match any instance config file names.
+WARNING: See https://github.com/node-config/node-config/wiki/Strict-Mode
+(node:17270) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
