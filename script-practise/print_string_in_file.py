@@ -1,11 +1,12 @@
 file_name = input("Enter the file name: ")
-
+search = input("What to search? ")
+print()
 found = False
 with open(file_name, 'r') as content:
     for line in content:
-        if 'error' in line.lower():
+        if search in line.lower():
             print(line.strip())
             found = True
 
 if not found:
-    print("No error found in", file_name)
+    print(f"No error found in file: {file_name}")
