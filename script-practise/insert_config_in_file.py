@@ -6,3 +6,4 @@ with open(file, 'r') as f:
     if config not in content:
         with open(file, 'a') as f:
             f.write("\n" + config)
+            
