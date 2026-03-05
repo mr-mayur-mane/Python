@@ -23,5 +23,5 @@ def add_config(file,key,value):
                 f.write(line)
     if not found:
         with open(file, 'a') as f:
-            f.write(f"{key} = {value}")
-add_config("app.conf","max_buffer","500")
+            f.write(f"{key} = {value}\n")
+add_config("app.conf","innode","500")
