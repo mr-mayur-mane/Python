@@ -1,9 +1,11 @@
+file_name = input("Enter the file name: ")
 
-file_name = input("Enter the file path: ")
-
-with open(file_name, 'r') as file:
-    for line in file:
+found = False
+with open(file_name, 'r') as content:
+    for line in content:
         if 'error' in line.lower():
-            print("Error found: ", line.strip())
-        else:
-            print("No error found")
+            print(line.strip())
+            found = True
+
+if not found:
+    print("No error found in", file_name)
