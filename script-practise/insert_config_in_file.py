@@ -25,6 +25,7 @@ def add_config(file, key, value):
                 f.write(f'{line}')
                     
     if not found:
+        print(f'No config found.\nAdding the config: {key} = {value}')
         with open(file, 'a') as f:
             f.write(f'{key} = {value}\n')
 
