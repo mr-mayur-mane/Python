@@ -10,4 +10,4 @@ with open(file, 'r') as file:
             found = True
 
 if not found:
-    print(f'No keyword found: {search}')
+    print(f"No keyword found: {search}")
