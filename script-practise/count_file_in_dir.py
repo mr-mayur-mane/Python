@@ -1,10 +1,9 @@
 import os
 
-dir = input("Enter the dir: ")
+dir = input("Enter the valid dir path: ")
 
 if os.path.isdir(dir):
     file = [ f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir,f)) and f.endswith(".log")]
-    print("Files in ", dir, ":", file)
-    print("File count ending with .log: ", len(file))
+    print("Files ending with .log", file)
 else:
-    print("Invalid dir:", dir)
+    print("Invalid dir", dir)
