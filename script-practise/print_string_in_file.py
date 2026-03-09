@@ -1,12 +1,13 @@
-file_name = input("Enter the file name: ")
-search = input("What to search? ")
-print()
-found = False
-with open(file_name, 'r') as content:
-    for line in content:
+
+file= input("Enter the file name: ")
+search = input(f'Enter the key word to search in file {file}: ')
+
+with open(file, 'r') as file:
+    found=False
+    for line in file:
         if search in line.lower():
-            print(line.strip())
+            print(f'Key word found: {line}')
             found = True
 
 if not found:
-    print(f"No error found in file: {file_name}")
+    print(f'No keyword found: {search}')
