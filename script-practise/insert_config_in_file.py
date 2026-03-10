@@ -15,8 +15,8 @@ def add_config(file, key, value):
                     print("Config key found, updating the value")
                 else:
                     writer.write(f'{line}')
-        if not found:
-            print("No config found, appending the config")
-            writer.write(f'\n{key} = {value}')
+                if not found:
+                    print("No config found, appending the config")
+                    writer.write(f'\n{key} = {value}')
 
 add_config(file, key, value)
