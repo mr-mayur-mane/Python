@@ -6,8 +6,8 @@ def app_config(file,key,value):
     found = False
     with open(file, 'r') as read:
         config = read.readlines()
-        for line in config:
-            with open(file, 'w') as write:
+        with open(file, 'w') as write:
+            for line in config:
                 if line.strip().startswith(key):
                     write.write(f'{key} = {value}')
                     found = True
@@ -16,8 +16,8 @@ def app_config(file,key,value):
                     write.write(f'{line}')
                     
 
-                if not found:
-                    print(f'No config found.\n Adding config: {key} = {value}')
-                    write.write(f'\n{key} = {value}')
+            if not found:
+                print(f'No config found.\n Adding config: {key} = {value}')
+                write.write(f'\n{key} = {value}')
 
 app_config(file,key,value)
