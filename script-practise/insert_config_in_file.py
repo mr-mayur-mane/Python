@@ -9,7 +9,7 @@ def app_config(file,key,value):
         with open(file, 'w') as write:
             for line in config:
                 if line.strip().startswith(key):
-                    write.write(f'{key} = {value}')
+                    write.write(f'{key} = {value}\n')
                     found = True
                     print(f'Config found.\n Updating condif: {key} = {value}')
                 else:
