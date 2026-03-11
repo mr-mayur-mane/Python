@@ -1,22 +1,23 @@
-file = input("Enter the file name: ")
+file = "app.conf"
 
-key = input("Enter the config key: ")
-
-value= input("Enter the config value: ")
-def add_config(file, key, value):
+key = input("Enter the config key name: ")
+value = input("Enter the config value name: ")
+def app_config(file,key,value):
     found = False
-    with open(file, 'r') as reader:
-        lines =reader.readlines()
-        for line in lines:
-            with open(file, 'w') as writer:
-                if line.strip().startswith(f'{key}'):
-                    writer.write(f'{key} = {value}')
+    with open(file, 'r') as read:
+        config = read.readlines()
+        for line in config:
+            with open(file, 'w') as write:
+                if line.strip().startswith(key):
+                    write.write(f'{key} = {value}')
                     found = True
-                    print("Config key found, updating the value")
+                    print(f'Config found.\n Updating condif: {key} = {value}')
                 else:
-                    writer.write(f'{line}')
-                if not found:
-                    print("No config found, appending the config")
-                    writer.write(f'\n{key} = {value}')
+                    write.write(f'{line}')
+                    
 
-add_config(file, key, value)
+                if not found:
+                    print(f'No config found.\n Adding config: {key} = {value}')
+                    write.write(f'\n{key} = {value}')
+
+app_config(file,key,value)
