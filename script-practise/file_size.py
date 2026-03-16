@@ -1,6 +1,7 @@
 import os
 
-file = "app.conf"
+file = input("Enter the file name: ")
 
-size = os.path.getsize(file)/(1024 * 1024)
-print(f'File size of {file}: {round(size,4)} M')
+size = os.path.getsize(file)/(1024* 1024)
+
+print(f'File size of "{file}": {round(size,4)} M')
