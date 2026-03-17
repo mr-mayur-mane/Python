@@ -1,13 +1,17 @@
 
-file= input("Enter the file name: ")
-search = input(f'Enter the key word to search in file {file}: ')
+file = "error.log"
 
-with open(file, 'r') as file:
-    found=False
-    for line in file:
+search = input("Enter the keywod to search: ")
+
+print()
+
+with open(file, 'r') as reader:
+    lines = reader.readlines()
+    found = False
+    for line in lines:
         if search in line.lower():
-            print(f'Key word found: {line}')
             found = True
-
-if not found:
-    print(f'No keyword found: {search}')
+            print(f'The keyword {search} found:\n {line}')
+    
+    if not found:
+        print("No keyword found in the file:")
