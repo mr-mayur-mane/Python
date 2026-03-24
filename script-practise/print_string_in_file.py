@@ -4,10 +4,10 @@ file = "error.log"
 with open(file, 'r') as reader:
     lines = reader.readlines()
     found = False
-    for line in lines:
+    for line_no, line in enumerate(lines, start=1):
         if search in line.lower():
-            print(f'Keyword found: {search}')
             print()
+            print("Line number: ", line_no)
             print(line)
             found = True
 
