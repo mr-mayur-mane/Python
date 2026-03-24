@@ -2,6 +2,6 @@ import os
 
 file = input("Enter the file name: ")
 
-size = os.path.getsize(file)/(1024* 1024)
+file_size = os.path.getsize(file)/(1024 * 1024)
 
-print(f'File size of "{file}": {round(size,4)} M')
+print(f'File size of {file}: {round(file_size,4)} M')
