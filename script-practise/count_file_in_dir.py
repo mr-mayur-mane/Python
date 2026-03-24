@@ -1,9 +1,11 @@
 import os
 
-dir = "C:\\"
+dir = input("Enter the dir name: ")
 
-file = [ f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir,f)) and f.endswith(".log")]
+if os.path.isdir(dir):
+    print(f'Valid dir: {dir}')
+    file = [ f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir,f)) and f.endswith(".log")]
+    print(f'File count in dir {dir}: {len(file)}')
 
-print(f'Files ending with .log in dir {dir}: {file}')
-print()
-print(f'File count ending with .log: {len(file)}')
+else:
+    print(f'Invalid dir path/ Dir not exits: {dir.strip()}')
