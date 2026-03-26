@@ -8,9 +8,9 @@ def app_conf(file,key,value):
         config = reader.readlines()
         with open(file, 'w') as writer:
             for line in config:
-                if line.startswith('f{key}'):
+                if line.startswith(key):
                     print(f'Config found, updaing the value: \n{key} = {value}')
-                    writer.write(f'\n{key} = {value}')
+                    writer.write(f'{key} = {value}\n')
                     found = True
                 else:
                     writer.write(line)
