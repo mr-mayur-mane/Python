@@ -1,9 +1,10 @@
 file = input("Enter the file name: ")
 keyword = input("Enter the keyword to search in file: ")
 
-with open(file, 'r') as r:
+with open(file, 'r') as f:
     found = False
-    for line in r:
+    lines = f.readlines()
+    for line in lines:
         if keyword in line:
             print(line)
             found = True
