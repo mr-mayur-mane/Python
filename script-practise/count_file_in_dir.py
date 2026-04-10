@@ -20,4 +20,4 @@ if os.path.isdir(dir):
     print(f'File ending with .log: {file}')
 
 else:
-    print(f'Invalid dir or dir not exists: {dir}')
+    print(f'{dir}: Invalid dir or dir not exists')
