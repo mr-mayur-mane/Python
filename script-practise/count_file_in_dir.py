@@ -1,9 +1,3 @@
-# import os
-
-# dir = input("Enter the dir name: ")
-
-
-
 import os
 
 dir = input("Enter the dir path: ")
