@@ -1,23 +1,47 @@
-file = "app.conf"
+# file = "app.conf"
 
-key = input("Enter the config key: ")
-value= input("Enter hte config value: ")
-def app_conf(file,key,value):
-    found = False
-    with open(file, 'r') as reader:
-        config = reader.readlines()
-        with open(file, 'w') as writer:
-            for line in config:
-                if line.startswith(key):
-                    print(f'Config found, updaing the value: \n{key} = {value}')
-                    writer.write(f'{key} = {value}\n')
-                    found = True
-                else:
-                    writer.write(line)
+# key = input("Enter the config key: ")
+# value= input("Enter hte config value: ")
+# def app_conf(file,key,value):
+#     found = False
+#     with open(file, 'r') as reader:
+#         config = reader.readlines()
+#         with open(file, 'w') as writer:
+#             for line in config:
+#                 if line.startswith(key):
+#                     print(f'Config found, updaing the value: \n{key} = {value}')
+#                     writer.write(f'{key} = {value}\n')
+#                     found = True
+#                 else:
+#                     writer.write(line)
 
-            if not found:
-                print("Config not found, adding the config")
-                writer.write(f'\n{key}={value}')
+#             if not found:
+#                 print("Config not found, adding the config")
+#                 writer.write(f'\n{key}={value}')
 
         
-app_conf(file,key,value)
+# app_conf(file,key,value)
+
+file = "app.conf"
+
+config_key = input("Enter the config key: ")
+config_value = input("Enter the config value: ")
+
+def update_config(file,config_key,config_value):
+    found = False
+    with open(file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            with open(file, 'w') as w:
+                if line.startswith(config_key):
+                    print("Config found, updating")
+                    w.write(f'{config_key} = {config_value}\n')
+                    found = True
+                else:
+                    w.write(line)
+
+                if not found:
+                    print("No config found, Adding config")
+                    w.write(f'\n{config_key} = {config_value}')
+
+update_config(file,config_key,config_value)
