@@ -19,5 +19,6 @@ def update_config(file,config_key,config_value):
                 if not found:
                     print("No config found, Adding config")
                     w.write(f'\n{config_key} = {config_value}')
+                    found = True
 
 update_config(file,config_key,config_value)
